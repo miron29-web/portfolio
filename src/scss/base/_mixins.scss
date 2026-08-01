@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+@mixin fluid(
+    $property,
+    $min,
+    $max,
+    $minViewport: 320,
+    $maxViewport: 1920
+) {
+    #{$property}: clamp(
+        #{$min}px,
+        calc(
+            #{$min}px +
+            (#{$max} - #{$min}) *
+            ((100vw - #{$minViewport}px) / (#{$maxViewport} - #{$minViewport}))
+        ),
+        #{$max}px
+    );
+}
