@@ -1,2 +1,17 @@
 @use 'variables' as *;
 @use './mixins' as *;
+
+body {
+  font-family: $font-main;
+  font-size: $font-base-size;
+  font-weight: 400;
+  color: $color-white;
+
+  background-color: $color-bg1;
+}
+
+.container{
+  max-width: calc($container-width + $container-padding * 2);
+  @include fluid(padding-inline, 30, 128, 1200, 1600);
+  margin-inline: auto;
+}

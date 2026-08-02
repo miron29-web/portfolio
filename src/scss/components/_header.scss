@@ -1,0 +1,84 @@
+@use './../base/variables' as *;
+@use './../base/mixins' as *;
+
+.header{
+    &__inner{
+        column-gap: 20px;
+        padding: 64px 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: 1px $color-grey solid;
+    }
+}
+
+.logo{
+    display: flex;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    @include fluid(gap, 8, 12, 390, 768);
+
+    &__accent{
+        color: $color-accent-sub;
+    }
+
+    &__text{
+    }
+}
+
+.social-links{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include fluid(gap, 12, 32, 390, 768);
+
+    &__item{
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+
+        font-size: 16px;
+    }
+
+    &__svg{
+        width: 24px;
+        height: 24px;
+
+        flex-shrink: 0;
+        fill: $color-accent-sub;
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        &__inner{
+            padding: 24px 0;
+        }
+    }
+    .logo{
+        font-size: 24px;
+    }
+
+    .social-links{
+        &__text{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 390px){
+    .logo{
+        font-size: 16px;
+    }
+
+    .social-links{
+        &__svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
