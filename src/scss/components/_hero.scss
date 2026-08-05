@@ -3,6 +3,8 @@
 
 .hero{
     &__inner{
+        min-height: calc(100vh - 171px);
+
         display: flex;
         flex-direction: column;
         row-gap: 64px;

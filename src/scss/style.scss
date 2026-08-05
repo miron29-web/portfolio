@@ -3,6 +3,8 @@
 @use './base/variables';
 @use './base/base';
 
+@use './components/scroll';
 
 @use './components/header';
 @use './components/hero';
+@use './components/about_me';

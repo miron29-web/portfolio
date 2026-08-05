@@ -16,6 +16,10 @@ body {
   margin-inline: auto;
 }
 
+.text-accent{
+  color: $color-accent-sub;
+}
+
 .button{
   display: flex;
   width: fit-content;

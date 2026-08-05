@@ -1,0 +1,131 @@
+@use './../base/variables' as *;
+@use './../base/mixins' as *;
+
+.about-me{
+    min-height: 100vh;
+
+    background-color: #1A1E23;
+
+    background-image: url(./../../images/about-me_bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+
+        padding: 128px;
+
+        padding: clamp(32px, 3.33vw, 128px);
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr clamp(462px, 35vw, 526px);
+
+        column-gap: 40px;
+        row-gap: 128px;
+
+        margin-bottom: 128px;
+    }
+
+    &__title{
+        width: fit-content;
+        padding: 16px 40px;
+
+        background-color: $color-bg1;
+        border: 4px $color-accent-sub solid;
+        border-radius: 40px 0;
+
+        font-family: $font-sub;
+        font-weight: 400;
+        @include fluid(font-size, 32, 64, 390, 768);
+    }
+
+    &__body{
+        max-width: 880px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 64px;
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        background-color: $color-bg1;
+        border-radius: 40px;
+        padding: 24px 40px;
+    }
+
+    &__pf{
+        margin-left: 16px;
+    }
+
+    &__heading{
+        font-family: $font-sub;
+        font-size: 64px;
+        font-weight: 400;
+        color: $color-accent-sub;
+    }
+
+    &__image{
+        justify-self: right;
+        width: 100%;
+        max-width: 462px;
+        aspect-ratio: 462 / 556;
+
+        background-image: url('./../../images/about-me_img.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .about-me__content{
+        grid-template-columns: 1fr;
+    }
+
+    .about-me__image{
+        justify-self: center;
+    }
+
+    .about-me__title{
+        font-size: 32px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .about-me__inner{
+        padding-inline: 0;
+    }
+
+    .about-me__body{
+        @include fluid(row-gap, 32, 64, 390, 768);
+    }
+
+    .about-me__content{
+        @include fluid(row-gap, 64, 128, 390, 768);
+    }
+}
+
+@media(max-width: 390px){
+    .about-me__title{
+        font-size: 32px;
+    }
+
+    .about-me__body{
+        row-gap: 32px;
+    }
+
+    .about-me__content{
+        row-gap: 64px;
+    }
+}
