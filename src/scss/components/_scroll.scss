@@ -1,47 +1,59 @@
 .scroll {
   width: 100%;
   min-height: 140px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   align-self: self-start;
+
   margin-bottom: 64px;
 
   &__mouse{
     position: relative;
+
     width: 32px;
     height: 44px;
+
     border: 4px #98FAEC solid;
     border-radius: 80px;
 
     &::before {
         position: absolute;
+
         content: "";
         width: 3px;
         height: 8px;
+
         top: 8px;
         left: 50%;
         transform: translateX(-50%);
+
         background-color: #98FAEC;
     }
   }
 
   &__line{
     position: relative;
-    width: 3px;
+
+    width: 2px;
     height: 80px;
+
     background: repeating-linear-gradient(to bottom, #fff 0 8px, transparent 8px 14px);
     border-radius: 999px;
   }
 
   &__diamond{
     position: absolute;
+
+    width: 8px;
+    height: 8px;
+
     left: 50%;
     bottom: -12px;
-    width: 14px;
-    height: 14px;
-    background-color: #fff;
+
     transform: translateX(-50%) rotate(45deg);
+    background-color: #fff;
   }
 }

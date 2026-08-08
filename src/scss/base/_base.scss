@@ -20,6 +20,12 @@ body {
   color: $color-accent-sub;
 }
 
+.inner{
+    display: flex;
+    flex-direction: column;
+    padding: clamp(32px, 3.33vw, 128px);
+}
+
 .button{
   display: flex;
   width: fit-content;
@@ -66,4 +72,86 @@ body {
   font-family: $font-main;
   font-size: 14px;
   color: $color-accent-main;
+}
+
+.title{
+  display: inline-block;
+
+  position: relative;
+  padding: 16px 0;
+  margin: 0 auto;
+
+  font-family: $font-sub;
+  @include fluid(font-size, 32, 64, 390, 768);
+  font-weight: 400;
+  color: $color-accent-main;
+
+  &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      height: 4px;
+      width: 100%;
+
+      background-color: $color-accent-main;
+  }
+}
+
+.heading{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+
+    row-gap: 16px;
+
+  &__title{
+    position: relative;
+    align-self: center; 
+
+    font-family: $font-sub;
+    color: $color-accent-sub;
+    font-weight: 400;
+    font-size: 64px;
+
+    &::after{
+      content: "";
+      position: absolute;
+
+      height: 2px;
+      width: 100%;
+
+      left: 0;
+      right: 0;
+      bottom: -8px;
+
+      background-color: $color-accent-sub;
+    }
+  }
+}
+
+.color--python{
+  background-color: $color--python;
+}
+
+.color--html{
+  background-color: $color--html;
+}
+
+.color--css{
+  background-color: $color--css;
+}
+
+.color--js{
+  background-color: $color--js;
+}
+
+.color--react{
+  background-color: $color--react;
+}
+
+.color--postgres{
+  background-color: $color--postgres;
 }

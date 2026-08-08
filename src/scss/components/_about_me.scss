@@ -11,15 +11,6 @@
     background-size: cover;
     background-position: center;
 
-    &__inner{
-        display: flex;
-        flex-direction: column;
-
-        padding: 128px;
-
-        padding: clamp(32px, 3.33vw, 128px);
-    }
-
     &__content{
         display: grid;
         grid-template-columns: 1fr clamp(462px, 35vw, 526px);
