@@ -441,7 +441,7 @@ body {
   height: 96px;
   border-radius: 120px;
   border: 3px #98FAEC solid;
-  background-image: url("./../../images/profile.png");
+  background-image: url("../images/profile.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -576,7 +576,7 @@ body {
 .about-me {
   min-height: 100vh;
   background-color: #1A1E23;
-  background-image: url(./../../images/about-me_bg.svg);
+  background-image: url(../images/about-me_bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -627,7 +627,7 @@ body {
   width: 100%;
   max-width: 462px;
   aspect-ratio: 462/556;
-  background-image: url("./../../images/about-me_img.jpg");
+  background-image: url("../images/about-me_img.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -678,7 +678,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./../../images/skills_bg.jpg");
+  background-image: url("../images/skills_bg.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.1;
@@ -814,7 +814,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: url(./../../images/projects_bg.jpg);
+  background: url(../images/projects_bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
