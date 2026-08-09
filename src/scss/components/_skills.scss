@@ -40,6 +40,12 @@
         font-size: 16px;
     }
 
+    &__content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 90px;
+    }
+
     &__caption{
         position: absolute;
         top: 12px;
@@ -54,7 +60,7 @@
 
     &__list{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 128px;
         @include fluid(gap, 20, 128, 800, 1900);
     }
@@ -80,7 +86,87 @@
     }
 }
 
+.skills-cards{
+    display: flex;
+    justify-content: center;
+    column-gap: 128px;
+    @include fluid(column-gap, 24, 128, 768, 1280);
+
+    &__card{
+        width: 296px;
+        height: 132px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        row-gap: 8px;
+
+        padding: 16px 24px;
+
+        color: $color-bg1;
+
+        background-color: $color-accent-main;
+        border-radius: 8px;
+    }
+
+    &__svg{
+
+    }
+
+    &__title{
+        color: $color-bg1;
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    &__list{
+        display: flex;
+        column-gap: 12px;
+    }
+
+    &__item{
+        position: relative;
+
+        color: $color-grey;
+        font-size: 16px;
+        font-weight: 400;
+
+        &:not(:last-child)::after{
+            position: absolute;
+
+            content:"";
+            width: 6px;
+            height: 6px;
+            border-radius: 60px;
+            background-color: $color-grey;
+
+            right: -8px;
+            top: 8px;
+        }
+    }
+}
+
+@media (max-width: 1920px) {
+    .skills__list{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1280px) {
+    .skills__list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+
+    .skills-cards{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 32px;
+    }
+
     .skills__header .scroll{
         display: none;
     }

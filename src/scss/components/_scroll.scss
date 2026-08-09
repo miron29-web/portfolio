@@ -57,3 +57,9 @@
     background-color: #fff;
   }
 }
+
+@media (max-width: 768px){
+  .scroll{
+    display: none;
+  }
+}

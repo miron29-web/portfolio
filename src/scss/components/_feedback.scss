@@ -1,0 +1,106 @@
+@use './../base/variables' as *;
+
+.feedback{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: $color-bg2;
+
+    &__inner{
+        row-gap: 102px;
+    }
+
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title{
+        width: fit-content;
+
+        color: $color-accent-sub;
+        font-size: 32px;
+        font-weight: 500;
+        text-transform: capitalize;
+
+        padding: 16px 40px;
+
+        border: 2px solid $color-accent-sub;
+        border-radius: 32px 0;
+        margin-bottom: 64px;
+    }
+}
+
+.form{
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+
+    color: $color-accent-sub;
+    font-family: $font-sub;
+    font-weight: 300;
+    font-size: 16px;
+
+    margin-bottom: 64px;
+
+    &__row{
+        display: flex;
+        width: 100%;
+        column-gap: 128px;
+    }
+
+    &__field{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0;
+        min-width: 0;
+        gap: 24px;
+    }
+
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+        min-width: 0;
+
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $color-accent-sub;
+
+        padding-bottom: 8px;
+        outline: none;
+
+        &::placeholder{
+            color: #fff;
+        }
+    }
+
+    &__btn{
+        display: flex;
+        gap: 16px;
+        align-self: center;
+
+        color: #292F36;
+        font-family: $font-sub;
+        font-weight: 400;
+        font-size: 20px;
+
+        background-color: $color-accent-main;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 32px;
+    }
+    
+}
+
+@media (max-width: 768px){
+    .form__row{
+        column-gap: 24px;
+    }
+}

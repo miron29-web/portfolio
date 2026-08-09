@@ -1,0 +1,46 @@
+<section class="feedback">
+    <div class="container">
+        <div class="feedback__inner inner">
+            <header class="feedback__header">
+                @@include("./scroll.html")
+                <div class="heading" >
+                    <h2 class="heading__title">Контакты</h2>
+                    <p class="heading__subtitle">
+                        Если у вас есть проект или идея — буду рад обсудить
+                    </p>
+                </div>
+            </header>
+            <div class="feedback__content">
+                <h3 class="feedback__title">
+                    Напишите мне сообщение
+                </h3>
+                <form class="feedback__form form" method="post">
+                    <div class="form__row">
+                        <div class="form__field">  
+                            <label class="form__label" for="userName">Ваше имя*</label>
+                            <input class="form__input" id="userName" type="text" placeholder="Введите ваше имя" minlength="3" required>
+                        </div>
+                        <div class="form__field">
+                            <label class="form__label" for="userEmail">Ваш email*</label>
+                            <input class="form__input" id="userEmail" type="email" placeholder="Введите ваш email" minlength="3" required>
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="userMessage">Ваше сообщение*</label>
+                        <textarea
+                            class="form__input"
+                            id="userMessage"
+                            placeholder="Введите ваше сообщение"
+                            required
+                        ></textarea>
+                    </div>
+                    <button class="form__btn" type="submit">Отправить сообщение
+                        <svg class="form__svg" width="22" height="22">
+                            <use href="./images/sprite.svg#shape"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

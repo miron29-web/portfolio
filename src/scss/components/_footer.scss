@@ -1,0 +1,36 @@
+@use './../base/variables' as *;
+@use './../base/mixins' as *;
+
+
+.footer{
+    background-color: $color-bg2;
+
+    &__inner{
+        padding: 16px 0;
+        border-top: 1px solid $color-grey;
+    }
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    column-gap: 32px;
+
+    &__link{
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $color-accent-main;
+        border-radius: 48px;
+    }
+
+    &__svg{
+        color: $color-bg1;
+        fill: $color-bg1;
+
+    }
+}
