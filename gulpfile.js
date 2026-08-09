@@ -116,6 +116,8 @@ function styles() {
 
 }
 
+gulp.task('build', gulp.parallel(html, styles));
+
 // ==============================
 // JS
 // ==============================
