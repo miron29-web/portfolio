@@ -116,7 +116,19 @@ function styles() {
 
 }
 
-gulp.task('build', gulp.parallel(html, styles));
+exports.build = series(
+    clean,
+
+    parallel(
+        html,
+        styles,
+        scripts,
+        images,
+        svg,
+        sprite,
+        fonts
+    )
+);
 
 // ==============================
 // JS
