@@ -134,7 +134,7 @@ body {
 
 .container {
   max-width: 1920px;
-  padding-inline: clamp(9px, 9px + (128 - 9) * (100vw - 600px) / (1280 - 600), 128px);
+  padding-inline: clamp(24px, 24px + (128 - 24) * (100vw - 600px) / (1280 - 600), 128px);
   margin-inline: auto;
 }
 
@@ -145,7 +145,7 @@ body {
 .inner {
   display: flex;
   flex-direction: column;
-  padding: clamp(32px, 3.33vw, 128px);
+  padding: 64px clamp(32px, 3.33vw, 128px);
 }
 
 .button {
@@ -160,7 +160,6 @@ body {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  fill: #ffffff;
 }
 .button--download {
   padding: 16px 32px;
@@ -168,6 +167,14 @@ body {
   border-radius: 32px;
   color: #292F36;
   font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.button--download__svg {
+  fill: currentColor;
+}
+.button--download:hover {
+  background-color: #12F7D6;
+  color: #ffffff;
 }
 .button--message {
   margin-left: 16px;
@@ -180,6 +187,9 @@ body {
   padding: 8px;
   background-color: #43454D;
   border-radius: 40px;
+}
+.button--message__svg {
+  fill: #ffffff;
 }
 
 .tag {
@@ -258,6 +268,11 @@ body {
   background-color: #E7A020;
 }
 
+@media (max-width: 768px) {
+  .inner {
+    padding: clamp(64px, 3.33vw, 128px) 0;
+  }
+}
 .scroll {
   width: 100%;
   min-height: 140px;
@@ -326,6 +341,14 @@ body {
 .logo__accent {
   color: #12F7D6;
 }
+.logo__text {
+  font-weight: 400;
+  transition: color 0.3s ease, color 0.3s ease;
+}
+.logo__text:hover {
+  color: #98FAEC;
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -336,6 +359,10 @@ body {
   align-items: center;
   column-gap: 8px;
   font-size: 16px;
+  transition: color 0.3s ease, color 0.3s ease;
+}
+.social-links__item:hover {
+  color: #98FAEC;
 }
 .social-links__svg {
   width: 24px;
@@ -369,7 +396,6 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 64px;
-  padding: clamp(24px, 3.33vw, 64px) clamp(32px, 3.33vw, 128px) clamp(32px, 3.33vw, 128px) clamp(32px, 3.33vw, 128px);
 }
 .hero__title {
   color: #98FAEC;
@@ -954,6 +980,7 @@ body {
   border-bottom: 1px solid #12F7D6;
   padding-bottom: 8px;
   outline: none;
+  color: #ffffff;
 }
 .form input::placeholder,
 .form textarea::placeholder {
