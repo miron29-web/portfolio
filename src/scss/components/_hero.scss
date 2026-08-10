@@ -8,14 +8,6 @@
         display: flex;
         flex-direction: column;
         row-gap: 64px;
-
-        padding: 
-            clamp(24px, 3.33vw, 64px) 
-            clamp(32px, 3.33vw, 128px) 
-            clamp(32px, 3.33vw, 128px) 
-            clamp(32px, 3.33vw, 128px)
-        ;
-
     }
 
     &__title{

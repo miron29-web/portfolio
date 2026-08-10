@@ -12,7 +12,7 @@ body {
 
 .container{
   max-width: calc($container-width + $container-padding * 2);
-  @include fluid(padding-inline, 9, 128, 600, 1280);
+  @include fluid(padding-inline, 24, 128, 600, 1280);
   margin-inline: auto;
 }
 
@@ -23,7 +23,7 @@ body {
 .inner{
     display: flex;
     flex-direction: column;
-    padding: clamp(32px, 3.33vw, 128px);
+    padding: 64px clamp(32px, 3.33vw, 128px);
 }
 
 .button{
@@ -38,7 +38,6 @@ body {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    fill: $color-white;
   }
 
   &--download{
@@ -49,6 +48,17 @@ body {
 
     color: #292F36;
     font-size: 20px;
+
+    transition: background-color 0.3s ease, color 0.3s ease; 
+
+    &__svg{
+      fill: currentColor;
+    }
+
+    &:hover{
+      background-color: $color-accent-sub;
+      color: $color-white;
+    }
   }
 
   &--message{
@@ -63,6 +73,10 @@ body {
       padding: 8px;
       background-color: $color-grey;
       border-radius: 40px;
+    }
+
+    &__svg{
+      fill: $color-white;
     }
   }
 
@@ -154,4 +168,10 @@ body {
 
 .color--postgres{
   background-color: $color--postgres;
+}
+
+@media (max-width: 768px){
+  .inner{
+    padding: clamp(64px, 3.33vw, 128px) 0;
+  }
 }
