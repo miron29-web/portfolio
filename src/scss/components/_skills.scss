@@ -2,8 +2,6 @@
 @use './../base/mixins' as *;
 
 .skills{
-    min-height: 100vh;
-
     position: relative;
 
     &::before{
@@ -25,10 +23,16 @@
 
     &__inner{
         row-gap: 64px;
+        padding: 128px;
     }
 
     &__header{
         position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 64px;
     }
 
     &__text{
@@ -49,8 +53,7 @@
     &__caption{
         position: absolute;
         top: 12px;
-        right: 340px;
-        @include fluid(right, 8, 340, 920, 1900);
+        right: 0;
 
         font-family: $font-sub;
         font-weight: 400;
@@ -60,21 +63,25 @@
 
     &__list{
         display: grid;
+        row-gap: 64px;
         grid-template-columns: repeat(6, 1fr);
-        gap: 128px;
-        @include fluid(gap, 20, 128, 800, 1900);
+        
     }
 
     &__item{
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex-shrink: 0;
         row-gap: 24px;
     }
 
     &__icon{
-        padding: 40px;
-        @include fluid(padding, 24, 40, 390, 768);
+        display: flex;
+        justify-content: center;
+
+        width: 144px;
+        height: 144px;
         border-radius: 80px;
     }
 
@@ -108,6 +115,8 @@
 
         background-color: $color-accent-main;
         border-radius: 8px;
+
+        border-left: 8px $color--css solid;
     }
 
     &__svg{
@@ -154,12 +163,19 @@
 }
 
 @media (max-width: 1280px) {
+    .skills__inner{
+        padding: 128px 0;
+    }
+
     .skills__list{
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    .skills__inner{
+        padding: 64px 0;
+    }
 
     .skills-cards{
         flex-direction: column;

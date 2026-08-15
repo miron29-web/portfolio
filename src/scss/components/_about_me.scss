@@ -2,8 +2,6 @@
 @use './../base/mixins' as *;
 
 .about-me{
-    min-height: 100vh;
-
     background-color: #1A1E23;
 
     background-image: url(../images/about-me_bg.svg);
@@ -11,14 +9,20 @@
     background-size: cover;
     background-position: center;
 
+    &__inner{
+        display: flex;
+        row-gap: 128px;
+        padding: 128px 0;
+    }
+
     &__content{
         display: grid;
         grid-template-columns: 1fr clamp(462px, 35vw, 526px);
+        align-items: center;
 
         column-gap: 40px;
         row-gap: 128px;
-
-        margin-bottom: 128px;
+        padding: 0 64px 0 128px;
     }
 
     &__title{
@@ -31,7 +35,7 @@
 
         font-family: $font-sub;
         font-weight: 400;
-        @include fluid(font-size, 32, 64, 390, 768);
+        @include fluid(font-size, 32, 64, 768, 1920);
     }
 
     &__body{
@@ -58,7 +62,7 @@
 
     &__heading{
         font-family: $font-sub;
-        font-size: 64px;
+        @include fluid(font-size, 32, 64, 768, 1920);
         font-weight: 400;
         color: $color-accent-sub;
     }
@@ -81,6 +85,8 @@
 @media (max-width: 1280px) {
     .about-me__content{
         grid-template-columns: 1fr;
+        padding: 0;
+        align-self: center;
     }
 
     .about-me__image{
@@ -98,12 +104,16 @@
         padding-inline: 0;
     }
 
+    .about-me__text{
+        padding: 24px;
+    }
+
     .about-me__body{
         @include fluid(row-gap, 32, 64, 390, 768);
     }
 
     .about-me__content{
-        @include fluid(row-gap, 64, 128, 390, 768);
+        row-gap: 64px;
     }
 }
 

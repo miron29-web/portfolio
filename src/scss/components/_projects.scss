@@ -1,8 +1,9 @@
+@use './../base/variables' as *;
+@use './../base/mixins' as *;
+
 .projects{
     display: flex;
     flex-direction: column;
-
-    min-height: 100vh;
 
     background: url(../images/projects_bg.jpg);
     background-repeat: no-repeat;
@@ -10,7 +11,30 @@
     background-size: cover;
 
     &__inner{
+        display: flex;
         row-gap: 64px;
-        padding-inline: 0;
+        padding: 128px;
+    }
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        row-gap: 64px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .projects{
+        min-height: auto;
+    }
+
+    .projects__inner{
+        padding: 64px 0;
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects__inner{
     }
 }

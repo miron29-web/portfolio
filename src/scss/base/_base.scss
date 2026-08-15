@@ -11,9 +11,14 @@ body {
 }
 
 .container{
+  width: 100%;
   max-width: calc($container-width + $container-padding * 2);
   @include fluid(padding-inline, 24, 128, 600, 1280);
   margin-inline: auto;
+}
+
+section{
+  min-height: 100vh;
 }
 
 .text-accent{
@@ -23,7 +28,6 @@ body {
 .inner{
     display: flex;
     flex-direction: column;
-    padding: 64px clamp(32px, 3.33vw, 128px);
 }
 
 .button{

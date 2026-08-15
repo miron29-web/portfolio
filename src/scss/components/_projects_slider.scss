@@ -8,8 +8,6 @@
 
     @include fluid(gap, 16, 128, 1280, 1920);
 
-    margin: 0 auto 128px;
-
     &__wrap{
         width: 820px;
         flex-shrink: 0;
@@ -82,18 +80,19 @@
     }
 }
 @media (max-width: 768px){
+
     .slider__btn {
         flex: 0 0 54px;
-        width: 54px;
-        height: 54px;
+        width: 42px;
+        height: 42px;
     }
 }
 
 @media (max-width: 390px){
     .slider__btn {
         flex: 0 0 54px;
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
     }
 
 

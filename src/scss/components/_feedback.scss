@@ -1,15 +1,24 @@
 @use './../base/variables' as *;
 
 .feedback{
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
     background-color: $color-bg2;
 
     &__inner{
-        row-gap: 102px;
+        max-width: 1120px;
+        width: 100%;
 
+        margin-inline: auto;
+        row-gap: 102px;
+        padding: 64px 0;
+    }
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        row-gap: 64px;
     }
 
     &__content{
