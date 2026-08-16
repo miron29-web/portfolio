@@ -1,19 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>full-stack developer portfolio</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    @@include("components/header.html")
-    @@include("components/hero.html")
-    @@include("components/about_me.html")
-    @@include("components/skills.html")
-    @@include("components/projects.html")
-    @@include("components/feedback.html")
-    <!-- @@include("components/footer.html") -->
-    <script src="./js/slider.js"></script>
-</body>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/slider.js" defer></script>
+    <script src="./js/animation_scroll.js" defer></script>
+  </head>
+  <body>
+    @@include("components/menu.html") @@include("components/hero.html")
+    @@include("components/about_me.html") @@include("components/skills.html")
+    @@include("components/projects.html") @@include("components/feedback.html")
+    @@include("components/footer.html")
+  </body>
 </html>

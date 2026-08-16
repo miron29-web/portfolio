@@ -4,13 +4,7 @@
 
 const gulp = require("gulp");
 
-const {
-    src,
-    dest,
-    watch,
-    series,
-    parallel
-} = gulp;
+const { src, dest, watch, series, parallel } = gulp;
 
 const fileInclude = require("gulp-file-include");
 
@@ -26,50 +20,47 @@ const svgmin = require("gulp-svgmin");
 
 const svgSprite = require("gulp-svg-sprite");
 
+const prettier = require("gulp-prettier").default;
+
 // ==============================
 // Пути
 // ==============================
 
 const paths = {
+  html: {
+    src: "src/html/**/*.html",
+    dest: "dist/",
+  },
 
-    html: {
-        src: "src/html/**/*.html",
-        dest: "dist/"
-    },
+  styles: {
+    src: "src/scss/**/*.scss",
+    dest: "dist/css/",
+  },
 
-    styles: {
-        src: "src/scss/**/*.scss",
-        dest: "dist/css/"
-    },
+  scripts: {
+    src: "src/js/**/*.js",
+    dest: "dist/js/",
+  },
 
-    scripts: {
-        src: "src/js/**/*.js",
-        dest: "dist/js/"
-    },
+  images: {
+    src: ["src/images/**/*", "!src/images/**/*.svg"],
+    dest: "dist/images/",
+  },
 
-    images: {
-        src: [
-            "src/images/**/*",
-            "!src/images/**/*.svg"
-        ],
-        dest: "dist/images/"
-    },
+  svg: {
+    src: "src/images/**/*.svg",
+    dest: "dist/images/",
+  },
 
-    svg: {
-        src: "src/images/**/*.svg",
-        dest: "dist/images/"
-    },
+  icons: {
+    src: "src/icons/**/*.svg",
+    dest: "dist/images/",
+  },
 
-    icons: {
-        src: "src/icons/**/*.svg",
-        dest: "dist/images/"
-    },
-
-    fonts: {
-        src: "src/fonts/*.ttf",
-        dest: "dist/fonts/"
-    }
-
+  fonts: {
+    src: "src/fonts/*.ttf",
+    dest: "dist/fonts/",
+  },
 };
 
 // ==============================
@@ -77,7 +68,7 @@ const paths = {
 // ==============================
 
 function clean() {
-    return del(["dist"]);
+  return del(["dist"]);
 }
 
 // ==============================
@@ -85,17 +76,16 @@ function clean() {
 // ==============================
 
 function html() {
+  return src(paths.html.src)
+    .pipe(
+      fileInclude({
+        prefix: "@@",
+      }),
+    )
 
-    return src(paths.html.src)
+    .pipe(dest(paths.html.dest))
 
-        .pipe(fileInclude({
-            prefix: "@@"
-        }))
-
-        .pipe(dest(paths.html.dest))
-
-        .pipe(browserSync.stream());
-
+    .pipe(browserSync.stream());
 }
 
 // ==============================
@@ -103,31 +93,18 @@ function html() {
 // ==============================
 
 function styles() {
+  return src(paths.styles.src)
+    .pipe(sass().on("error", sass.logError))
 
-    return src(paths.styles.src)
+    .pipe(dest(paths.styles.dest))
 
-        .pipe(
-            sass().on("error", sass.logError)
-        )
-
-        .pipe(dest(paths.styles.dest))
-
-        .pipe(browserSync.stream());
-
+    .pipe(browserSync.stream());
 }
 
 exports.build = series(
-    clean,
+  clean,
 
-    parallel(
-        html,
-        styles,
-        scripts,
-        images,
-        svg,
-        sprite,
-        fonts
-    )
+  parallel(html, styles, scripts, images, svg, sprite, fonts),
 );
 
 // ==============================
@@ -135,13 +112,28 @@ exports.build = series(
 // ==============================
 
 function scripts() {
+  return src(paths.scripts.src)
+    .pipe(dest(paths.scripts.dest))
 
-    return src(paths.scripts.src)
+    .pipe(browserSync.stream());
+}
 
-        .pipe(dest(paths.scripts.dest))
+// ==============================
+// Форматирование кода (html, scss, js)
+// ==============================
 
-        .pipe(browserSync.stream());
-
+function format() {
+  return src(["src/**/*.html", "src/**/*.scss", "src/**/*.js", "gulpfile.js"])
+    .pipe(
+      prettier({
+        singleQuote: false,
+        semi: true,
+        tabWidth: 2,
+        useTabs: false,
+        printWidth: 100,
+      }),
+    )
+    .pipe(dest((file) => file.base));
 }
 
 // ==============================
@@ -149,11 +141,7 @@ function scripts() {
 // ==============================
 
 function images() {
-
-    return src(paths.images.src)
-
-        .pipe(dest(paths.images.dest));
-
+  return src(paths.images.src).pipe(dest(paths.images.dest));
 }
 
 // ==============================
@@ -161,13 +149,10 @@ function images() {
 // ==============================
 
 function svg() {
+  return src(paths.svg.src)
+    .pipe(svgmin())
 
-    return src(paths.svg.src)
-
-        .pipe(svgmin())
-
-        .pipe(dest(paths.svg.dest));
-
+    .pipe(dest(paths.svg.dest));
 }
 
 // ==============================
@@ -175,25 +160,24 @@ function svg() {
 // ==============================
 
 function sprite() {
+  return src(paths.icons.src)
+    .pipe(svgmin())
 
-    return src(paths.icons.src)
+    .pipe(
+      svgSprite({
+        shape: {
+          transform: ["svgo"],
+        },
+        mode: {
+          symbol: {
+            dest: ".",
+            sprite: "sprite.svg",
+          },
+        },
+      }),
+    )
 
-        .pipe(svgmin())
-
-        .pipe(svgSprite({
-            shape: {
-                transform: ["svgo"]
-            },
-            mode: {
-                symbol: {
-                    dest: ".",
-                    sprite: "sprite.svg"
-                }
-            }
-        }))
-
-        .pipe(dest(paths.icons.dest));
-
+    .pipe(dest(paths.icons.dest));
 }
 
 // ==============================
@@ -201,13 +185,10 @@ function sprite() {
 // ==============================
 
 function fonts() {
+  return src(paths.fonts.src)
+    .pipe(ttf2woff2())
 
-    return src(paths.fonts.src)
-
-        .pipe(ttf2woff2())
-
-        .pipe(dest(paths.fonts.dest));
-
+    .pipe(dest(paths.fonts.dest));
 }
 
 // ==============================
@@ -215,19 +196,15 @@ function fonts() {
 // ==============================
 
 function server() {
+  browserSync.init({
+    server: {
+      baseDir: "dist",
+    },
 
-    browserSync.init({
+    port: 3000,
 
-        server: {
-            baseDir: "dist"
-        },
-
-        port: 3000,
-
-        notify: false
-
-    });
-
+    notify: false,
+  });
 }
 
 // ==============================
@@ -235,44 +212,33 @@ function server() {
 // ==============================
 
 function watcher() {
+  watch(paths.html.src, html);
 
-    watch(paths.html.src, html);
+  watch(paths.styles.src, styles);
 
-    watch(paths.styles.src, styles);
+  watch(paths.scripts.src, scripts);
 
-    watch(paths.scripts.src, scripts);
+  watch(paths.images.src, images);
 
-    watch(paths.images.src, images);
+  watch(paths.svg.src, svg);
 
-    watch(paths.svg.src, svg);
+  watch(paths.icons.src, sprite);
 
-    watch(paths.icons.src, sprite);
-
-    watch(paths.fonts.src, fonts);
-
+  watch(paths.fonts.src, fonts);
 }
 
 // ==============================
 // Главная задача
 // ==============================
 
+exports.format = format;
+
 exports.default = series(
+  clean,
 
-    clean,
+  format,
 
-    parallel(
-        html,
-        styles,
-        scripts,
-        images,
-        svg,
-        sprite,
-        fonts
-    ),
+  parallel(html, styles, scripts, images, svg, sprite, fonts),
 
-    parallel(
-        server,
-        watcher
-    )
-
+  parallel(server, watcher),
 );

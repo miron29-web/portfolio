@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use './mixins' as *;
+@use "variables" as *;
+@use "./mixins" as *;
 
 body {
   font-family: $font-main;
@@ -10,27 +10,27 @@ body {
   background-color: $color-bg1;
 }
 
-.container{
+.container {
   width: 100%;
   max-width: calc($container-width + $container-padding * 2);
   @include fluid(padding-inline, 24, 128, 600, 1280);
   margin-inline: auto;
 }
 
-section{
+section {
   min-height: 100vh;
 }
 
-.text-accent{
+.text-accent {
   color: $color-accent-sub;
 }
 
-.inner{
-    display: flex;
-    flex-direction: column;
+.inner {
+  display: flex;
+  flex-direction: column;
 }
 
-.button{
+.button {
   display: flex;
   width: fit-content;
   flex-wrap: nowrap;
@@ -38,34 +38,36 @@ section{
   align-items: center;
   column-gap: 16px;
 
-  &__svg{
+  &__svg {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
   }
 
-  &--download{
+  &--download {
     padding: 16px 32px;
 
     background-color: #fff;
     border-radius: 32px;
 
-    color: #292F36;
+    color: #292f36;
     font-size: 20px;
 
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
 
-    &__svg{
+    &__svg {
       fill: currentColor;
     }
 
-    &:hover{
+    &:hover {
       background-color: $color-accent-sub;
       color: $color-white;
     }
   }
 
-  &--message{
+  &--message {
     margin-left: 16px;
 
     font-family: $font-main;
@@ -73,26 +75,35 @@ section{
     font-size: 32px;
     color: $color-accent-sub;
 
-    &__wrap{
+    &__wrap {
       padding: 8px;
       background-color: $color-grey;
       border-radius: 40px;
     }
 
-    &__svg{
+    &__svg {
       fill: $color-white;
     }
   }
 
+  span {
+    transition:
+      color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      color: $color-accent-main;
+    }
+  }
 }
 
-.tag{
+.tag {
   font-family: $font-main;
   font-size: 14px;
   color: $color-accent-main;
 }
 
-.title{
+.title {
   display: inline-block;
 
   position: relative;
@@ -104,37 +115,37 @@ section{
   font-weight: 400;
   color: $color-accent-main;
 
-  &::after{
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
-      height: 4px;
-      width: 100%;
+    height: 4px;
+    width: 100%;
 
-      background-color: $color-accent-main;
+    background-color: $color-accent-main;
   }
 }
 
-.heading{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    text-align: center;
+.heading {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: center;
 
-    row-gap: 16px;
+  row-gap: 16px;
 
-  &__title{
+  &__title {
     position: relative;
-    align-self: center; 
+    align-self: center;
 
     font-family: $font-sub;
     color: $color-accent-sub;
     font-weight: 400;
     font-size: 64px;
 
-    &::after{
+    &::after {
       content: "";
       position: absolute;
 
@@ -150,32 +161,44 @@ section{
   }
 }
 
-.color--python{
+.color--python {
   background-color: $color--python;
 }
 
-.color--html{
+.color--html {
   background-color: $color--html;
 }
 
-.color--css{
+.color--css {
   background-color: $color--css;
 }
 
-.color--js{
+.color--js {
   background-color: $color--js;
 }
 
-.color--react{
+.color--react {
   background-color: $color--react;
 }
 
-.color--postgres{
+.color--postgres {
   background-color: $color--postgres;
 }
 
-@media (max-width: 768px){
-  .inner{
+._anim-show {
+  transform: translate(0, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+
+._anim-show._active,
+._active ._anim-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .inner {
     padding: clamp(64px, 3.33vw, 128px) 0;
   }
 }

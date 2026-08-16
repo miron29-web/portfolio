@@ -1,0 +1,45 @@
+@use "./../base/variables" as *;
+@use "./../base/mixins" as *;
+
+.menu {
+  position: fixed;
+  z-index: 999;
+
+  left: $container-padding;
+  top: 234px;
+  transform: translateX(-100%);
+
+  display: inline-block;
+  justify-content: center;
+
+  background-color: #1a1e23;
+  border: 1px #fff solid;
+  border-radius: 40px;
+
+  padding: 8px 12px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 20px;
+  }
+
+  &__link {
+    svg {
+      transition:
+        color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    svg:hover {
+      color: $color-accent-sub;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}

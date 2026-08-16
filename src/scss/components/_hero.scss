@@ -1,232 +1,243 @@
-@use './../base/variables' as *;
-@use './../base/mixins' as *;
+@use "./../base/variables" as *;
+@use "./../base/mixins" as *;
 
-.hero{
-    min-height: calc(100vh - 171px);
+.hero {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
 
-    &__inner{
-        display: flex;
-        flex-direction: column;
-        row-gap: 64px;
-        
-        padding: 64px 128px 128px 128px;
-        @include fluid(padding-inline, 32, 128, 1620, 1920);
-    }
+    padding: 64px 128px 128px 128px;
+    @include fluid(padding-inline, 32, 128, 1620, 1920);
+  }
 
-    &__title{
-        color: $color-accent-main;
-        font-family: $font-sub;
-        font-weight: 400;
-        font-size: 117px;
+  &__title {
+    color: $color-accent-main;
+    font-family: $font-sub;
+    font-weight: 400;
+    font-size: 117px;
 
-        text-align: center;
-    }
+    text-align: center;
+  }
 
-    &__body{
-        display: flex;
-        @include fluid(column-gap, 16, 120, 1620, 1920);
-        row-gap: 64px;
-        align-items: center;
-    }
+  &__body {
+    display: flex;
+    @include fluid(column-gap, 16, 120, 1620, 1920);
+    row-gap: 64px;
+    align-items: center;
+  }
 
-    &__content{
-        display: flex;
-        column-gap: 24px;
-    }
+  &__content {
+    display: flex;
+    column-gap: 24px;
+  }
 }
 
-.profile-card{
-    grid-area: card;
-    width: 320px;
-    height: 520px;
+.profile-card {
+  grid-area: card;
+  width: 320px;
+  height: 520px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  padding: 36px 24px;
+
+  font-family: $font-sub;
+  font-weight: 400;
+
+  border: 3px #fff solid;
+  border-radius: 160px 0;
+
+  box-shadow: -4px -4px 2px 3px $color-accent-main;
+
+  &__header {
+    width: 100%;
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 120px;
+    border: 3px $color-accent-main solid;
+
+    background-image: url("../images/profile.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__name {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+
+  &__prof {
+    font-size: 14px;
+  }
+
+  &__content {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column;
+
+    margin-bottom: 32px;
+  }
+
+  &__contacts {
+    width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 16px;
+
+    span,
+    a {
+      cursor: pointer;
+
+      transition:
+        color 0.3s ease,
+        color 0.3s ease;
+
+      &:hover {
+        color: $color-accent-sub;
+      }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  &__svg {
+    fill: $color-accent-sub;
     flex-shrink: 0;
+  }
 
-    padding: 36px 24px;
-    
-    font-family: $font-sub;
-    font-weight: 400;
-
-    border: 3px #fff solid;
-    border-radius: 160px 0;
-
-    box-shadow: -4px -4px 2px 3px $color-accent-main;
-
-    &__header{
-        width: 100%;
-
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__avatar{
-        width: 96px;
-        height: 96px;
-        border-radius: 120px;
-        border: 3px $color-accent-main solid;
-
-        background-image: url("../images/profile.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    &__name{
-        font-size: 32px;
-        font-weight: 500;
-        margin-top: 16px;
-    }
-
-    &__prof{
-        font-size: 14px;
-    }
-
-    &__content{
-        width: 100%;
-
-        display: flex;
-        flex-wrap: wrap;
-        flex: 1;
-        flex-direction: column;
-
-        margin-bottom: 32px;
-    }
-    
-    &__contacts{
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 16px;
-    }
-
-    &__contact{
-            display: flex;
-            column-gap: 16px;
-    }
-
-    &__svg{
-        fill: $color-accent-sub;
-        flex-shrink: 0;
-    }
-
-    &__footer{
-        width: 100%;
-    }
+  &__footer {
+    width: 100%;
+  }
 }
 
-.description{
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+
+  &__wrap {
     display: flex;
     flex-direction: column;
-    align-items: center;
     row-gap: 32px;
+  }
 
-    &__wrap{
-        display: flex;
-        flex-direction: column;
-        row-gap: 32px;
-    }
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
 
-    &__heading{
-        display: flex;
-        flex-direction: column;
-        row-gap: 16px;
-    }
+  &__title {
+    margin-left: 16px;
 
-    &__title{
-        margin-left: 16px;
-        
-        font-family: $font-sub;
-        @include fluid(font-size, 32, 64, 390, 768);
-        font-weight: 400;
-    }
+    font-family: $font-sub;
+    @include fluid(font-size, 32, 64, 390, 768);
+    font-weight: 400;
+  }
 
-    &__content{
-        display: flex;
-        flex-direction: column;
-        row-gap: 16px;
-    }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
 
-    &__text{
-        margin-left: 16px;
+  &__text {
+    margin-left: 16px;
 
-        font-family: $font-main;
-        font-weight: 400;
-        font-size: 16px;
-    }
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 16px;
+  }
 
-    &__accent-text{
-        color: $color-accent-sub;
-    }
+  &__accent-text {
+    color: $color-accent-sub;
+  }
 }
 
-.stats{
-    grid-area: stats;
+.stats {
+  grid-area: stats;
 
+  display: flex;
+  align-items: center;
+
+  &__list {
+    max-width: 260px;
+
+    font-family: $font-sub;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    padding: 68px 32px;
+    border-radius: 80px;
+
+    background-color: $color-bg2;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  &__num {
+    font-weight: 500;
+    font-size: 48px;
+    color: $color-accent-sub;
+  }
+
+  &__skill {
     display: flex;
     align-items: center;
 
-    &__list{
-        max-width: 260px;
-
-        font-family: $font-sub;
-
-        display: flex;
-        flex-direction: column;
-        row-gap: 48px;
-
-        padding: 68px 32px;
-        border-radius: 80px;
-
-        background-color: $color-bg2;
-    }
-
-    &__item{
-        display: flex;
-        column-gap: 16px;
-    }
-
-    &__num{
-        font-weight: 500;
-        font-size: 48px;
-        color: $color-accent-sub;
-    }
-
-    &__skill{
-        display: flex;
-        align-items: center;
-
-        font-size: 16px;
-    }
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 1340px) {
-    .hero__body {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .hero__body {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 768px){
-    .hero__inner{
-        padding: 64px 0;
-    }
+@media (max-width: 768px) {
+  .hero__inner {
+    padding: 64px 0;
+  }
 
-    .hero__title{
-        display: none;
-    }
+  .hero__title {
+    display: none;
+  }
 
-    .hero__content{
-        flex-direction: column;
-        row-gap: 64px;
-        align-items: center;
-    }
+  .hero__content {
+    flex-direction: column;
+    row-gap: 64px;
+    align-items: center;
+  }
 }

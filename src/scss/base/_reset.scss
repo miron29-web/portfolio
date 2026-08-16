@@ -8,8 +8,17 @@
 }
 
 /* HTML5 display-role reset для старых браузеров */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -20,12 +29,16 @@ html {
 }
 
 /* Наследование шрифтов для форм */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* Убираем стандартный стиль списков */
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -42,7 +55,11 @@ table {
 }
 
 /* Изображения responsive по умолчанию */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;

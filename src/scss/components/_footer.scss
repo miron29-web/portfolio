@@ -1,36 +1,42 @@
-@use './../base/variables' as *;
-@use './../base/mixins' as *;
+@use "./../base/variables" as *;
+@use "./../base/mixins" as *;
 
+.footer {
+  background-color: $color-bg2;
 
-.footer{
-    background-color: $color-bg2;
-
-    &__inner{
-        padding: 16px 0;
-        border-top: 1px solid $color-grey;
-    }
+  &__inner {
+    padding: 16px 0;
+    border-top: 1px solid $color-grey;
+  }
 }
 
-.socials{
+.socials {
+  display: flex;
+  justify-content: center;
+  column-gap: 32px;
+
+  &__link {
+    width: 42px;
+    height: 42px;
+
     display: flex;
     justify-content: center;
-    column-gap: 32px;
+    align-items: center;
 
-    &__link{
-        width: 42px;
-        height: 42px;
+    background-color: $color-accent-main;
+    border-radius: 48px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    transition:
+      background-color 0.3s ease,
+      background-color 0.3s ease;
 
-        background-color: $color-accent-main;
-        border-radius: 48px;
+    &:hover {
+      background-color: $color-accent-sub;
     }
+  }
 
-    &__svg{
-        color: $color-bg1;
-        fill: $color-bg1;
-
-    }
+  &__svg {
+    color: $color-bg1;
+    fill: $color-bg1;
+  }
 }

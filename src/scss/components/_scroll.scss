@@ -8,31 +8,35 @@
   justify-content: space-between;
   align-self: self-start;
 
-  &__mouse{
+  &__mouse {
     position: relative;
 
     width: 32px;
     height: 44px;
 
-    border: 4px #98FAEC solid;
+    border: 4px #98faec solid;
     border-radius: 80px;
 
+    animation: mouseMove 2s ease-in-out infinite;
+
     &::before {
-        position: absolute;
+      position: absolute;
 
-        content: "";
-        width: 3px;
-        height: 8px;
+      content: "";
+      width: 3px;
+      height: 8px;
 
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
 
-        background-color: #98FAEC;
+      background-color: #98faec;
+
+      animation: wheelMove 2s ease-in-out infinite;
     }
   }
 
-  &__line{
+  &__line {
     position: relative;
 
     width: 2px;
@@ -42,7 +46,7 @@
     border-radius: 999px;
   }
 
-  &__diamond{
+  &__diamond {
     position: absolute;
 
     width: 8px;
@@ -56,8 +60,36 @@
   }
 }
 
-@media (max-width: 768px){
-  .scroll{
+@media (max-width: 768px) {
+  .scroll {
+    display: none;
+  }
+}
+
+@keyframes mouseMove {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes wheelMove {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll {
     display: none;
   }
 }

@@ -1,94 +1,105 @@
-<section class="hero">
-    <div class="container">
-        <div class="hero__inner inner">
-            <h1 class="hero__title">Developer</h1>
-            <div class="hero__body">
-                <aside class="profile-card">
-                    <header class="profile-card__header">
-                        <div class="profile-card__avatar"></div>
-                        <h2 class="profile-card__name">Сергей</h2>
-                        <p class="profile-card__prof">Full-stack developer</p>
-                    </header>
-                    <div class="profile-card__content">
-                        <ul class="profile-card__contacts">
-                            <li class="profile-card__contact">
-                                <svg class="profile-card__svg" width="14" height="14">
-                                    <use href="./images/sprite.svg#location"></use>
-                                </svg>
-                                <span>Россия</span>
-                            </li>
-                            <li class="profile-card__contact">
-                                <svg class="profile-card__svg" width="14" height="14">
-                                    <use href="./images/sprite.svg#mail"></use>
-                                </svg>
-                                <a class="profile-card__link" href="mailto:miron29.web@gmail.com">miron29.web@gmail.com</a>
-                            </li>
-                            <li class="profile-card__contact">
-                                <svg class="profile-card__svg" width="14" height="14">
-                                    <use href="./images/sprite.svg#link"></use>
-                                </svg>
-                                <a class="profile-card__link" href="https://www.miron29.ru" target="_blank" rel="noopener noreferrer">www.miron29.ru</a>
-                            </li>
-                            <li class="profile-card__contact">
-                                <svg class="profile-card__svg" width="14" height="14">
-                                    <use href="./images/sprite.svg#work"></use>
-                                </svg>
-                                <span class="profile-card__text">Full-time / Freelancer</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="profile-card__footer">
-                        <a class="button button--download" href="./files/cv.pdf" download>
-                            <span>Download CV</span>
-                            <svg class="button__svg button--download__svg" width="24" height="24">
-                                <use href="./images/sprite.svg#download"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </aside>
-                <div class="hero__content">
-                    <div class="description">
-                        <div class="description__heading">
-                            <span class="tag">&lt;h1&gt;</span>
-                            <h2 class="description__title">
-                                Привет<br>Меня зовут <span class="description__accent-text">Сергей</span> <br>Full-Stack разработчик
-                            </h2>
-                            <span class="tag">&lt;/h1&gt;</span>
-                        </div>
-                        <div class="description__content">
-                            <span class="tag">&lt;p&gt;</span>
-                            <p class="description__text">
-                                Изучаю веб-разработку и применяю полученные знания на практике. Люблю решать задачи, писать аккуратный код и постоянно развиваться.
-                            </p>
-                            <span class="tag">&lt;/p&gt;</span>
-                            <a class="button button--message" href="mailto:miron29.web@gmail.com">
-                                <span>Написать мне</span>
-                                <div class="button--message__wrap">
-                                    <svg class="button__svg button--message__svg" width="24" height="24">
-                                        <use href="./images/sprite.svg#mail"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="stats">
-                        <ul class="stats__list">
-                            <li class="stats__item">
-                                <span class="stats__num">3</span>
-                                <p class="stats__skill">Языка программирования</p>
-                            </li>
-                            <li class="stats__item">
-                                <span class="stats__num">6</span>
-                                <p class="stats__skill">Инструментов разработки</p>
-                            </li>
-                            <li class="stats__item">
-                                <span class="stats__num">4</span>
-                                <p class="stats__skill">Завершенных проектов</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<section class="hero" id="hero">
+  @@include("./header.html")
+  <div class="container">
+    <div class="hero__inner inner">
+      <h1 class="hero__title">Developer</h1>
+      <div class="hero__body">
+        <aside class="profile-card">
+          <header class="profile-card__header">
+            <div class="profile-card__avatar"></div>
+            <h2 class="profile-card__name">Сергей</h2>
+            <p class="profile-card__prof">Full-stack developer</p>
+          </header>
+          <div class="profile-card__content">
+            <ul class="profile-card__contacts">
+              <li class="profile-card__contact">
+                <svg class="profile-card__svg" width="14" height="14">
+                  <use href="./images/sprite.svg#location"></use>
+                </svg>
+                <span>Россия</span>
+              </li>
+              <li class="profile-card__contact">
+                <svg class="profile-card__svg" width="14" height="14">
+                  <use href="./images/sprite.svg#mail"></use>
+                </svg>
+                <a class="profile-card__link" href="mailto:miron29.web@gmail.com"
+                  >miron29.web@gmail.com</a
+                >
+              </li>
+              <li class="profile-card__contact">
+                <svg class="profile-card__svg" width="14" height="14">
+                  <use href="./images/sprite.svg#link"></use>
+                </svg>
+                <a
+                  class="profile-card__link"
+                  href="https://www.miron29.ru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >www.miron29.ru</a
+                >
+              </li>
+              <li class="profile-card__contact">
+                <svg class="profile-card__svg" width="14" height="14">
+                  <use href="./images/sprite.svg#work"></use>
+                </svg>
+                <span class="profile-card__text">Full-time / Freelancer</span>
+              </li>
+            </ul>
+          </div>
+          <div class="profile-card__footer">
+            <a class="button button--download" href="./files/cv.pdf" download>
+              <span>Download CV</span>
+              <svg class="button__svg button--download__svg" width="24" height="24">
+                <use href="./images/sprite.svg#download"></use>
+              </svg>
+            </a>
+          </div>
+        </aside>
+        <div class="hero__content">
+          <div class="description">
+            <div class="description__heading">
+              <span class="tag">&lt;h1&gt;</span>
+              <h2 class="description__title">
+                Привет<br />Меня зовут <span class="description__accent-text">Сергей</span>
+                <br />Full-Stack разработчик
+              </h2>
+              <span class="tag">&lt;/h1&gt;</span>
             </div>
+            <div class="description__content">
+              <span class="tag">&lt;p&gt;</span>
+              <p class="description__text">
+                Изучаю веб-разработку и применяю полученные знания на практике. Люблю решать задачи,
+                писать аккуратный код и постоянно развиваться.
+              </p>
+              <span class="tag">&lt;/p&gt;</span>
+              <a class="button button--message" href="mailto:miron29.web@gmail.com">
+                <span>Написать мне</span>
+                <div class="button--message__wrap">
+                  <svg class="button__svg button--message__svg" width="24" height="24">
+                    <use href="./images/sprite.svg#mail"></use>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="stats">
+            <ul class="stats__list">
+              <li class="stats__item">
+                <span class="stats__num">3</span>
+                <p class="stats__skill">Языка программирования</p>
+              </li>
+              <li class="stats__item">
+                <span class="stats__num">6</span>
+                <p class="stats__skill">Инструментов разработки</p>
+              </li>
+              <li class="stats__item">
+                <span class="stats__num">4</span>
+                <p class="stats__skill">Завершенных проектов</p>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
