@@ -186,17 +186,17 @@ section {
 }
 
 ._anim-show {
-    opacity: 0;
-    transform: translateY(120px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-    will-change: opacity, transform;
+  opacity: 0;
+  transform: translateY(120px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
 }
 
 ._anim-show._active {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
