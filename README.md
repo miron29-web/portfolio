@@ -2,6 +2,11 @@
 
 Персональный сайт-портфолио Full-stack Web Developer.
 
+🔗 **Ссылки:**
+
+- [Страница портфолио](https://miron29-web.github.io/portfolio/)
+- [Шаблон проекта](https://www.figma.com/design/HeORLFXlCNtb35Vb9q1MLc/Web-Developer-Portfolio-Website-Template--Community-?node-id=2-3&m=dev&t=iNJJWmFIgyeJaqgP-1)
+
 Сайт содержит информацию обо мне, навыках, опыте работы и выполненных проектах, а также контактные данные и ссылки на социальные сети.
 
 ## 🛠 Стек
