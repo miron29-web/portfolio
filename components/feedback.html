@@ -18,13 +18,14 @@
       </header>
       <div class="feedback__content">
         <h3 class="feedback__title">Напишите мне сообщение</h3>
-        <form class="feedback__form form" method="post">
+        <form class="feedback__form form" action="/" method="post">
           <div class="form__row">
             <div class="form__field">
               <label class="form__label" for="userName">Ваше имя*</label>
               <input
                 class="form__input"
                 id="userName"
+                name="name"
                 type="text"
                 placeholder="Введите ваше имя"
                 minlength="3"
@@ -36,9 +37,9 @@
               <input
                 class="form__input"
                 id="userEmail"
+                name="email"
                 type="email"
                 placeholder="Введите ваш email"
-                minlength="3"
                 required
               />
             </div>
@@ -48,6 +49,7 @@
             <textarea
               class="form__input"
               id="userMessage"
+              name="message"
               placeholder="Введите ваше сообщение"
               required
             ></textarea>
