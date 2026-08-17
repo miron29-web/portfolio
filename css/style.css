@@ -380,8 +380,8 @@ section {
 .menu {
   position: fixed;
   z-index: 999;
-  left: 128px;
-  top: 234px;
+  left: 92px;
+  top: 200px;
   transform: translateX(-100%);
   display: inline-block;
   justify-content: center;
@@ -1050,6 +1050,7 @@ section {
 }
 .feedback__title {
   width: fit-content;
+  text-align: center;
   color: #12f7d6;
   font-size: 32px;
   font-weight: 500;
