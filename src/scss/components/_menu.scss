@@ -5,8 +5,8 @@
   position: fixed;
   z-index: 999;
 
-  left: $container-padding;
-  top: 234px;
+  left: 92px;
+  top: 200px;
   transform: translateX(-100%);
 
   display: inline-block;
@@ -39,7 +39,7 @@
 }
 
 @media (max-width: 1200px) {
-  .menu{
+  .menu {
     left: 72px;
   }
 }
