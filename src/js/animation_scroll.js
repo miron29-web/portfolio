@@ -1,41 +1,22 @@
 const animItems = document.querySelectorAll("._anim-item");
 
-if (animItems.length > 0) {
-  window.addEventListener("scroll", animOnScroll);
-  function animOnScroll(param) {
-    for (let index = 0; index < animItems.length; index++) {
-      const animItem = animItems[index];
-      const animItemHeight = animItem.offsetHeight;
-      const animItemOffset = offset(animItem).top;
-      const animStart = 4;
-
-      let animItemPoint = window.innerHeight - animItemHeight / animStart;
-
-      if (animItemHeight > window.innerHeight) {
-        animItemPoint = window.innerHeight - animItemHeight / animStart;
-      }
-
-      if (
-        pageYOffset > animItemOffset - animItemPoint &&
-        pageYOffset < animItemOffset + animItemHeight
-      ) {
-        animItem.classList.add("_active");
-      } else {
-        if (!animItem.classList.contains("_anim-no-hide")) {
-          animItem.classList.remove("_active");
+if (animItems.length) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("_active");
+                } else if (!entry.target.classList.contains("_anim-no-hide")) {
+                    entry.target.classList.remove("_active");
+                }
+            });
+        },
+        {
+            threshold: 0.1
         }
-      }
-    }
-  }
+    );
 
-  function offset(el) {
-    const rect = el.getBoundingClientRect(),
-      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-  }
-
-  setTimeout(() => {
-    animOnScroll();
-  }, 300);
+    animItems.forEach((item) => {
+        observer.observe(item);
+    });
 }
