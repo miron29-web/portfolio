@@ -357,11 +357,6 @@ section {
   background-color: #fff;
 }
 
-@media (max-width: 768px) {
-  .scroll {
-    display: none;
-  }
-}
 @keyframes mouseMove {
   0%, 100% {
     transform: translateY(0);
@@ -508,7 +503,6 @@ section {
 }
 
 .profile-card {
-  grid-area: card;
   width: 320px;
   height: 520px;
   display: flex;
@@ -591,11 +585,6 @@ section {
   align-items: center;
   row-gap: 32px;
 }
-.description__wrap {
-  display: flex;
-  flex-direction: column;
-  row-gap: 32px;
-}
 .description__heading {
   display: flex;
   flex-direction: column;
@@ -623,7 +612,6 @@ section {
 }
 
 .stats {
-  grid-area: stats;
   display: flex;
   align-items: center;
 }
@@ -800,13 +788,6 @@ section {
   display: flex;
   flex-direction: column;
   row-gap: 64px;
-}
-.skills__text {
-  text-align: center;
-}
-.skills__desc {
-  padding: 16px 0;
-  font-size: 16px;
 }
 .skills__content {
   display: flex;
