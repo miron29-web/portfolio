@@ -195,7 +195,6 @@ section {
 }
 .button--download:hover {
   background-color: #12f7d6;
-  color: #ffffff;
 }
 .button--message {
   margin-left: 16px;
@@ -212,10 +211,10 @@ section {
 .button--message__svg {
   fill: #ffffff;
 }
-.button span {
+.button--message span {
   transition: color 0.3s ease, color 0.3s ease;
 }
-.button span:hover {
+.button--message span:hover {
   color: #98faec;
 }
 
@@ -403,7 +402,12 @@ section {
   color: #12f7d6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .menu {
+    left: 72px;
+  }
+}
+@media (max-width: 900px) {
   .menu {
     display: none;
   }
@@ -905,8 +909,15 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
   .skills__icon {
-    width: 112px;
-    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+  }
+  .skills__svg {
+    width: 40px;
+    height: 40px;
   }
 }
 .projects {
@@ -999,15 +1010,19 @@ section {
 @media (max-width: 768px) {
   .slider__btn {
     flex: 0 0 54px;
-    width: 42px;
-    height: 42px;
+    width: 52px;
+    height: 52px;
+  }
+  .slider__btn::after {
+    width: 14px;
+    height: 14px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
   }
 }
 @media (max-width: 390px) {
   .slider__btn {
     flex: 0 0 54px;
-    width: 36px;
-    height: 36px;
   }
 }
 .feedback {
