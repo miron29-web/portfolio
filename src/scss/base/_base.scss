@@ -63,7 +63,6 @@ section {
 
     &:hover {
       background-color: $color-accent-sub;
-      color: $color-white;
     }
   }
 
@@ -84,15 +83,15 @@ section {
     &__svg {
       fill: $color-white;
     }
-  }
 
-  span {
-    transition:
-      color 0.3s ease,
-      color 0.3s ease;
+    span {
+      transition:
+        color 0.3s ease,
+        color 0.3s ease;
 
-    &:hover {
-      color: $color-accent-main;
+      &:hover {
+        color: $color-accent-main;
+      }
     }
   }
 }

@@ -89,15 +89,21 @@
 @media (max-width: 768px) {
   .slider__btn {
     flex: 0 0 54px;
-    width: 42px;
-    height: 42px;
+    width: 52px;
+    height: 52px;
+
+    &::after {
+      width: 14px;
+      height: 14px;
+
+      border-top: 3px solid white;
+      border-right: 3px solid white;
+    }
   }
 }
 
 @media (max-width: 390px) {
   .slider__btn {
     flex: 0 0 54px;
-    width: 36px;
-    height: 36px;
   }
 }

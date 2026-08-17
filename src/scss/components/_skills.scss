@@ -185,8 +185,17 @@
   }
 
   .skills__icon {
-    width: 112px;
-    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 96px;
+    height: 96px;
+  }
+
+  .skills__svg {
+    width: 40px;
+    height: 40px;
   }
 }
 

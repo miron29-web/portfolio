@@ -38,7 +38,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .menu{
+    left: 72px;
+  }
+}
+
+@media (max-width: 900px) {
   .menu {
     display: none;
   }
